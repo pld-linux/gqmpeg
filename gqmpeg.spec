@@ -1,14 +1,15 @@
 Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
-Version:	0.9.0
+Version:	0.11.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/gqmpeg/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/gqmpeg/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-ac25x.patch
 Icon:		gqmpeg.xpm
 URL:		http://gqmpeg.sourceforge.net/
 BuildRequires:	autoconf
@@ -35,9 +36,11 @@ biblioteki GTK i wymaga mpg123 w wersji 0.59o lub wy¿szej.
 
 %prep
 %setup -q
-%patch -p0
+%patch0 -p0
+%patch1 -p1
 
 %build
+rm -f missing
 gettextize --copy --force
 aclocal
 autoconf
