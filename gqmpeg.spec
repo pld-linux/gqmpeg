@@ -5,7 +5,7 @@ Version:	0.12.1
 Release:	2
 License:	GPL
 Group:		X11/Applications
-Source0:	http://prdownloads.sourceforge.net/gqmpeg/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gqmpeg/%{name}-%{version}.tar.gz
 Icon:		gqmpeg.xpm
 URL:		http://gqmpeg.sourceforge.net/
 BuildRequires:	autoconf
