@@ -14,7 +14,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	glib-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.9.4
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_prefix		/usr/X11R6
 %define	_sysconfdir	/etc/X11
