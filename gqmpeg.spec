@@ -1,8 +1,8 @@
 Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
-Version:	0.5.2
-Release:	2
+Version:	0.6.0
+Release:	1
 Group:		X11/Applications/Sound
 Group(pl):	X11/Aplikacje/D¼wiêk
 Copyright:      GPL
@@ -15,6 +15,9 @@ BuildPrereq:	gtk+-devel >= 1.2.0
 BuildPrereq:	glib-devel >= 1.2.0
 BuildPrereq:	imlib-devel >= 1.9.4
 BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define	_prefix		/usr/X11R6
+%define	_sysconfdir	/etc/X11
 
 %description
 GQmpeg is a frontend to mpg123. It includes playlist support and all 
@@ -32,16 +35,16 @@ mpg123 w wersji 0.59o lub wy¿szej.
 %patch -p0
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include -I%{_libdir}/glib/include"
+make CFLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include -I/usr/lib/glib/include"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/X11R6/{bin,share/pixmaps} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/pixmaps} \
 	$RPM_BUILD_ROOT/etc/X11/applnk/Multimedia
 
-install -s gqmpeg $RPM_BUILD_ROOT/usr/X11R6/bin
-install gqmpeg.png $RPM_BUILD_ROOT/usr/X11R6/share/pixmaps
-install gqmpeg.desktop $RPM_BUILD_ROOT/etc/X11/applnk/Multimedia
+install -s %{name} $RPM_BUILD_ROOT%{_bindir}
+install %{name}.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
+install %{name}.desktop $RPM_BUILD_ROOT%{_sysconfdir}/applnk/Multimedia
 
 gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS skindata-template
 
@@ -51,12 +54,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,FAQ,TODO,SKIN-SPECS,skindata-template,ChangeLog}.gz
-%attr(755,root,root) /usr/X11R6/bin/gqmpeg
+%attr(755,root,root) %{_bindir}/%{name}
 
-/etc/X11/applnk/Multimedia/gqmpeg.desktop
-/usr/X11R6/share/pixmaps/gqmpeg.png
+%{_sysconfdir}/applnk/Multimedia/%{name}.desktop
+%{_datadir}/pixmaps/%{name}.png
 
 %changelog
+* Wed May 26 1999 Piotr Czerwiñski <pius@pld.org.pl> 
+  [0.6.0-1]
+- updated to 0.6.0,
+- added using more rpm macros.
+
 * Fri May 14 1999 Piotr Czerwiñski <pius@pld.org.pl>
   [0.5.2-2]
 - spec file modified for PLD use,
