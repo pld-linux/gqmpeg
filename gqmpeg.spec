@@ -32,7 +32,7 @@ mpg123 w wersji 0.59o lub wy¿szej.
 %patch -p0
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include -I/usr/lib/glib/include"
+make CFLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include -I%{_libdir}/glib/include"
 
 %install
 rm -rf $RPM_BUILD_ROOT
