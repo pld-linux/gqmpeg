@@ -2,7 +2,7 @@ Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
 Version:	0.12.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gqmpeg/%{name}-%{version}.tar.gz
