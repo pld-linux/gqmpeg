@@ -1,15 +1,16 @@
 Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
-Version:	0.6.3
+Version:	0.7.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source0:	http://www.geocities.com/SiliconValley/Haven/5235/%{name}-%{version}.src.tgz
+Source0:	http://www.netpedia.net/hosting/gqview/packages/%{name}-%{version}.tar.gz
 Icon:		gqmpeg.xpm
 Patch0:		gqmpeg-desktop.patch
-URL:		http://www.geocities.com/SiliconValley/Haven/5235/index.html
+URL:		http://www.netpedia.net/hosting/gqview/mpeg-index.html
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.9.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,28 +34,30 @@ biblioteki GTK i wymaga mpg123 w wersji 0.59o lub wy¿szej.
 %patch -p0
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS -I%{_includedir} -I/usr/lib/glib/include"
+gettextize --copy --force
+LDFLAGS="-s"; export LDFLAGS
+%configure
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/pixmaps} \
-	$RPM_BUILD_ROOT%{_applnkdir}/Multimedia
-
-install -s %{name} $RPM_BUILD_ROOT%{_bindir}
-install plugin/gqmpeg-shoutcast-plugin.sh $RPM_BUILD_ROOT%{_bindir}
-install %{name}.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
-install %{name}.desktop $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	desktopdir=%{_applnkdir}/Multimedia
 
 gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS skindata-template \
 	plugin/README.plugin
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc {README,FAQ,TODO,SKIN-SPECS,skindata-template,ChangeLog}.gz
 %doc plugin/README.plugin.gz
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Multimedia/gqmpeg.desktop
-%{_datadir}/pixmaps/gqmpeg.png
+%{_datadir}/gqmpeg
+%{_datadir}/pixmaps/*
