@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gqmpeg/%{name}-%{version}.tar.gz
+# Source0-md5:	81c1d37bdbad57a5e45b9cbf936384ed
 Icon:		gqmpeg.xpm
 URL:		http://gqmpeg.sourceforge.net/
 BuildRequires:	autoconf
