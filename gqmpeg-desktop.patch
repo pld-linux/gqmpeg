@@ -1,0 +1,15 @@
+--- gqmpeg-0.91.1/gqmpeg.desktop~	Wed Jul 28 01:21:48 2004
++++ gqmpeg-0.91.1/gqmpeg.desktop	Wed Jul 28 01:21:48 2004
+@@ -7,9 +7,10 @@
+ Icon=gqmpeg.png
+ Info[fr]=Lecteur GQmpeg
+ Info=GQmpeg player
+-Terminal=0
++Terminal=false
+ Type=Application
+ StartupNotify=false
+ StartupWMClass=gqmpeg
+ Encoding=UTF-8
+-Categories=Application;AudioVideo;
++Categories=GTK;Audio;Player;
++# vi: encoding=utf-8
