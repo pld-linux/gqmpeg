@@ -21,13 +21,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GQmpeg is a frontend to mpg123. It includes playlist support and all
 the usual playing features. Supports custom skins (looks). Uilitizes
-the GTK library. Requires mpg123 v 0.59p or higher.
+the GTK+ library. Requires mpg123 v 0.59p or higher.
 
 %description -l pl
 GQmpeg jest nak³adk± graficzn± dla mpg123 - odtwarzacza plików
 zapisanych w formacie MP3. Zawiera wszystkie standardowe opcje,
 mo¿liwo¶æ zmiany wygl±du przy pomocy 'skórek'. GQmpeg korzysta z
-biblioteki GTK i wymaga mpg123 w wersji 0.59p lub wy¿szej.
+biblioteki GTK+ i wymaga mpg123 w wersji 0.59p lub wy¿szej.
 
 %prep
 %setup -q
