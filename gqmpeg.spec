@@ -37,8 +37,8 @@ biblioteki GTK i wymaga mpg123 w wersji 0.59o lub wy¿szej.
 rm -f missing
 gettextize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
