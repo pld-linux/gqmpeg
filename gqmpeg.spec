@@ -1,7 +1,7 @@
 Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
-Version:	0.6.1
+Version:	0.6.3
 Release:	1
 Group:		X11/Applications/Sound
 Group(pl):	X11/Aplikacje/D¼wiêk
@@ -43,10 +43,12 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/pixmaps} \
 	$RPM_BUILD_ROOT%{_sysconfdir}/applnk/Multimedia
 
 install -s %{name} $RPM_BUILD_ROOT%{_bindir}
+install plugin/gqmpeg-shoutcast-plugin.sh $RPM_BUILD_ROOT%{_bindir}
 install %{name}.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
 install %{name}.desktop $RPM_BUILD_ROOT%{_sysconfdir}/applnk/Multimedia
 
-gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS skindata-template
+gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS skindata-template \
+	plugin/README.plugin
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,12 +56,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,FAQ,TODO,SKIN-SPECS,skindata-template,ChangeLog}.gz
-%attr(755,root,root) %{_bindir}/%{name}
+%doc plugin/README.plugin.gz
+%attr(755,root,root) %{_bindir}/*
 
-%{_sysconfdir}/applnk/Multimedia/%{name}.desktop
-%{_datadir}/pixmaps/%{name}.png
+%{_sysconfdir}/applnk/Multimedia/gqmpeg.desktop
+%{_datadir}/pixmaps/gqmpeg.png
 
 %changelog
+* Sun Jun 04 1999 Piotr Czerwiñski <pius@pld.org.pl> 
+  [0.6.3-1]
+- updated to 0.6.3.
+
 * Tue Jun 1 1999 Piotr Czerwiñski <pius@pld.org.pl> 
   [0.6.1-1]
 - updated to 0.6.1.
