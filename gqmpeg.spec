@@ -46,8 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopdir=%{_applnkdir}/Multimedia
 
-gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS skindata-template \
-	plugin/README.plugin
+gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS plugin/README.plugin
 
 %find_lang %{name}
 
