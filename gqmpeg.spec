@@ -6,10 +6,10 @@ Release:	1
 Group:		X11/Applications/Sound
 Group(pl):	X11/Aplikacje/D¼wiêk
 Copyright:      GPL
-URL: 		http://www.geocities.com/SiliconValley/Haven/5235/index.html
 Source:		http://www.geocities.com/SiliconValley/Haven/5235/%{name}-%{version}.src.tgz
 Icon:		gqmpeg.xpm
 Patch:		gqmpeg-desktop.patch
+URL:		http://www.geocities.com/SiliconValley/Haven/5235/index.html
 BuildPrereq:	XFree86-devel
 BuildPrereq:	gtk+-devel >= 1.2.0
 BuildPrereq:	glib-devel >= 1.2.0
