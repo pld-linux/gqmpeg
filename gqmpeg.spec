@@ -61,29 +61,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/applnk/Multimedia/gqmpeg.desktop
 %{_datadir}/pixmaps/gqmpeg.png
-
-%changelog
-* Sun Jun 04 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [0.6.3-1]
-- updated to 0.6.3.
-
-* Tue Jun 1 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [0.6.1-1]
-- updated to 0.6.1.
-
-* Wed May 26 1999 Piotr Czerwiñski <pius@pld.org.pl> 
-  [0.6.0-1]
-- updated to 0.6.0,
-- added using more rpm macros.
-
-* Fri May 14 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [0.5.2-2]
-- spec file modified for PLD use,
-- added Icon file,
-- added gqmpeg-desktop.patch,
-- added BuildPrereq rules,
-- build on rpm 3,
-- package is FHS 2.0 compliant.
-
-* Thu May 13 1999 John Ellis <gqview@geocities.com>
-- initial rpm release.
