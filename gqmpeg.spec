@@ -1,7 +1,7 @@
 Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
-Version:	0.6.0
+Version:	0.6.1
 Release:	1
 Group:		X11/Applications/Sound
 Group(pl):	X11/Aplikacje/D¼wiêk
@@ -40,7 +40,7 @@ make CFLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include -I/usr/lib/glib/include"
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/pixmaps} \
-	$RPM_BUILD_ROOT/etc/X11/applnk/Multimedia
+	$RPM_BUILD_ROOT%{_sysconfdir}/applnk/Multimedia
 
 install -s %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}.png $RPM_BUILD_ROOT%{_datadir}/pixmaps
@@ -60,6 +60,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+* Tue Jun 1 1999 Piotr Czerwiñski <pius@pld.org.pl> 
+  [0.6.1-1]
+- updated to 0.6.1.
+
 * Wed May 26 1999 Piotr Czerwiñski <pius@pld.org.pl> 
   [0.6.0-1]
 - updated to 0.6.0,
