@@ -10,10 +10,10 @@ Source:		http://www.geocities.com/SiliconValley/Haven/5235/%{name}-%{version}.sr
 Icon:		gqmpeg.xpm
 Patch:		gqmpeg-desktop.patch
 URL:		http://www.geocities.com/SiliconValley/Haven/5235/index.html
-BuildPrereq:	XFree86-devel
-BuildPrereq:	gtk+-devel >= 1.2.0
-BuildPrereq:	glib-devel >= 1.2.0
-BuildPrereq:	imlib-devel >= 1.9.4
+BuildRequires:	XFree86-devel
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	glib-devel >= 1.2.0
+BuildRequires:	imlib-devel >= 1.9.4
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define	_prefix		/usr/X11R6
