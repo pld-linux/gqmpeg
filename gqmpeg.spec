@@ -1,8 +1,8 @@
 Summary:	mpeg player frontend to mpg123
 Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
-Version:	0.7.3
-Release:	2
+Version:	0.8.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
@@ -16,8 +16,9 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.9.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
 GQmpeg is a frontend to mpg123. It includes playlist support and all
@@ -57,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz plugin/*.gz
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 %{_applnkdir}/Multimedia/gqmpeg.desktop
 %{_datadir}/gqmpeg
 %{_datadir}/pixmaps/*
