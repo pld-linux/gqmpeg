@@ -60,4 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %{_applnkdir}/Multimedia/gqmpeg.desktop
 %{_datadir}/gqmpeg
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
