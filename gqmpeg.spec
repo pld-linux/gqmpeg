@@ -16,8 +16,6 @@ BuildRequires:	imlib-devel >= 1.9.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 GQmpeg is a frontend to mpg123. It includes playlist support and all
