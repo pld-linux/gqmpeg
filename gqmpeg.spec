@@ -48,8 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopdir=%{_applnkdir}/Multimedia
 
-gzip -9nf README ChangeLog FAQ TODO SKIN-SPECS plugin/README.plugin
-
 %find_lang %{name}
 
 %clean
@@ -57,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz plugin/*.gz
+%doc README ChangeLog FAQ TODO SKIN-SPECS plugin/README.plugin
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_applnkdir}/Multimedia/gqmpeg.desktop
