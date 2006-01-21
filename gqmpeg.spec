@@ -8,7 +8,6 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gqmpeg/%{name}-%{version}.tar.gz
 # Source0-md5:	e22eda86fc3e59108c8d04abc37b3e56
 Patch0:		%{name}-desktop.patch
-Icon:		gqmpeg.xpm
 URL:		http://gqmpeg.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
