@@ -1,5 +1,5 @@
 Summary:	mpeg player frontend to mpg123
-Summary(pl):	Nak³adka graficzna dla odtwarzacza mpg123
+Summary(pl.UTF-8):   NakÅ‚adka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
 Version:	0.91.1
 Release:	2
@@ -23,11 +23,11 @@ GQmpeg is a frontend to mpg123. It includes playlist support and all
 the usual playing features. Supports custom skins (looks). Uilitizes
 the GTK+ library. Requires mpg123 v 0.59p or higher.
 
-%description -l pl
-GQmpeg jest nak³adk± graficzn± dla mpg123 - odtwarzacza plików
+%description -l pl.UTF-8
+GQmpeg jest nakÅ‚adkÄ… graficznÄ… dla mpg123 - odtwarzacza plikÃ³w
 zapisanych w formacie MP3. Zawiera wszystkie standardowe opcje,
-mo¿liwo¶æ zmiany wygl±du przy pomocy 'skórek'. GQmpeg korzysta z
-biblioteki GTK+ i wymaga mpg123 w wersji 0.59p lub wy¿szej.
+moÅ¼liwoÅ›Ä‡ zmiany wyglÄ…du przy pomocy 'skÃ³rek'. GQmpeg korzysta z
+biblioteki GTK+ i wymaga mpg123 w wersji 0.59p lub wyÅ¼szej.
 
 %prep
 %setup -q
