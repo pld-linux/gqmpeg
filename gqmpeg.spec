@@ -1,5 +1,5 @@
 Summary:	mpeg player frontend to mpg123
-Summary(pl.UTF-8):   Nakładka graficzna dla odtwarzacza mpg123
+Summary(pl.UTF-8):	Nakładka graficzna dla odtwarzacza mpg123
 Name:		gqmpeg
 Version:	0.91.1
 Release:	2
